@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="thought.thought.main" target="17" />
-      <module name="thought.thought.test" target="17" />
+      <module name="thought.thought.main~1" target="17" />
+      <module name="thought.thought.test~1" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
