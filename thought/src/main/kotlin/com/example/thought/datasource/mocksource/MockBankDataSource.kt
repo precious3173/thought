@@ -1,4 +1,4 @@
-package com.example.thought.datasource.mock
+package com.example.thought.datasource.mocksource
 
 import com.example.thought.datasource.BankDataSource
 import com.example.thought.model.Bank

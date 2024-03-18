@@ -1,11 +1,9 @@
-package com.example.thought.datasource.service
+package com.example.thought.datasource.services
 
 import com.example.thought.datasource.BankDataSource
-import com.example.thought.datasource.mock.MockBankDataSource
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 internal class BankServiceTest{

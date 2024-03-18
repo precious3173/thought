@@ -1,4 +1,4 @@
-package com.example.thought.datasource.service
+package com.example.thought.datasource.services
 
 import com.example.thought.datasource.BankDataSource
 import com.example.thought.model.Bank
