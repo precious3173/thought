@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository
 @Repository
 class MockBankDataSource: BankDataSource{
     override fun getBank(): Collection<Bank> {
-        return listOf(Bank("1234", 0.0, 0))
+        return listOf(Bank("1234", "Precious",2000),
+                Bank("1244", "Thanni", 1000))
     }
 }

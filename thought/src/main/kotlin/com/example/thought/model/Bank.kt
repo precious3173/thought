@@ -2,6 +2,6 @@ package com.example.thought.model
 
 data class Bank(
         val accountNumber: String,
-        val trust: Double,
+        val name: String,
         val transactionFee: Int
         )

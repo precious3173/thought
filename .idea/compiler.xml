@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/3.2.4-SNAPSHOT/3b68bb1803002484b1957d7c09ede23a36586e31/spring-boot-configuration-processor-3.2.4-SNAPSHOT.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.30/f195ee86e6c896ea47a1d39defbe20eb59cd149d/lombok-1.18.30.jar" />
+        </processorPath>
+        <module name="thought.thought.main~3" />
+      </profile>
+    </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="thought.thought.main" target="17" />
       <module name="thought.thought.main~1" target="17" />

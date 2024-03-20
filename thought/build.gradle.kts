@@ -25,7 +25,15 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("io.mockk:mockk:1.10.4")
+	//testImplementation("io.mockk:mockk:1.10.4")
+	implementation ("org.springframework.boot:spring-boot-starter-data-jdbc")
+	implementation ("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation ("org.springframework.boot:spring-boot-starter-jdbc")
+	implementation ("org.springframework.boot:spring-boot-starter-web")
+	compileOnly ("org.projectlombok:lombok")
+	runtimeOnly ("org.postgresql:postgresql")
+	annotationProcessor ("org.springframework.boot:spring-boot-configuration-processor")
+	annotationProcessor ("org.projectlombok:lombok")
 }
 
 tasks.withType<KotlinCompile> {

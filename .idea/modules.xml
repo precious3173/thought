@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/thought.iml" filepath="$PROJECT_DIR$/.idea/thought.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/thought.thought.main.iml" filepath="$PROJECT_DIR$/.idea/modules/thought.thought.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/thought.thought.main~1.iml" filepath="$PROJECT_DIR$/.idea/modules/thought.thought.main~1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/thought.thought.test.iml" filepath="$PROJECT_DIR$/.idea/modules/thought.thought.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/thought.thought.test~1.iml" filepath="$PROJECT_DIR$/.idea/modules/thought.thought.test~1.iml" />
     </modules>
   </component>
 </project>
