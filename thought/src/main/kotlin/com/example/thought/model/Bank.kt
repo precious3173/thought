@@ -13,7 +13,7 @@ data class Bank(
         )
         @GeneratedValue(
                 strategy = GenerationType.SEQUENCE,
-                generator = "banks"
+                generator = "bank_sequence"
         )
         val id: Long,
         val accountNumber: String,
