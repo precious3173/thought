@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository
 import java.util.*
 import java.util.function.Function
 
-@Repository
+
 class MockBankDataSource: BankDataSource{
     override fun getBank(): Collection<Bank> {
         return listOf(Bank(1,"1234", "Precious",2000),
