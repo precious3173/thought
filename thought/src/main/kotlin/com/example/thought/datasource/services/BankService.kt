@@ -7,6 +7,29 @@ import org.springframework.stereotype.Service
 @Service
 class BankService(val bankDataSource: BankDataSource) {
     fun getBanks(): Collection<Bank> {
-        return bankDataSource.getBank()
+        return bankDataSource.findAll()
+    }
+
+    fun addNewBank(bank: Bank){
+
+
+    }
+    fun createBank(bank: Bank): Bank{
+        return bankDataSource.save(bank)
+    }
+    fun getBankById(id: Long): Bank? {
+        return bankDataSource.findById(id).orElse(null)
+    }
+
+    fun updateBank(id: Long, updatedBank: Bank): Bank? {
+        if (bankDataSource.existsById(id)) {
+            updatedBank.id = id
+            return bankDataSource.save(updatedBank)
+        }
+        return null
+    }
+
+    fun deleteBank(id: Long) {
+        bankDataSource.deleteById(id)
     }
 }

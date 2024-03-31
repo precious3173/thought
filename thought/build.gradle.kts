@@ -30,10 +30,12 @@ dependencies {
 	implementation ("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation ("org.springframework.boot:spring-boot-starter-jdbc")
 	implementation ("org.springframework.boot:spring-boot-starter-web")
-	compileOnly ("org.projectlombok:lombok")
-	runtimeOnly ("org.postgresql:postgresql")
+	implementation("org.postgresql:postgresql")
+	runtimeOnly("org.springframework.boot:spring-boot-devtools")
+	runtimeOnly("com.h2database:h2")
+	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	annotationProcessor ("org.springframework.boot:spring-boot-configuration-processor")
-	annotationProcessor ("org.projectlombok:lombok")
 }
 
 tasks.withType<KotlinCompile> {

@@ -3,7 +3,6 @@ package com.example.thought.model
 import jakarta.persistence.*
 
 @Entity
-@Table
 data class Bank(
         @Id
         @SequenceGenerator(
@@ -15,7 +14,7 @@ data class Bank(
                 strategy = GenerationType.SEQUENCE,
                 generator = "bank_sequence"
         )
-        val id: Long,
+        var id: Long = 0,
         val accountNumber: String,
         val name: String,
         val transactionFee: Int

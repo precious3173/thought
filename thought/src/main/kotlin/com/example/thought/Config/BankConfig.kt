@@ -1,7 +1,6 @@
 package com.example.thought.Config
 
 import com.example.thought.datasource.BankDataSource
-import com.example.thought.datasource.mocksource.MockBankDataSource
 import com.example.thought.model.Bank
 import org.springframework.boot.CommandLineRunner
 import org.springframework.context.annotation.Bean
