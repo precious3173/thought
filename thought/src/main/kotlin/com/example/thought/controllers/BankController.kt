@@ -3,20 +3,53 @@ package com.example.thought.controllers
 import com.example.thought.datasource.BankDataSource
 import com.example.thought.datasource.services.BankService
 import com.example.thought.model.Bank
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/banks")
 class BankController(private val service: BankService) {
-    @GetMapping
-    fun myBanks() : Collection<Bank> = service.getBanks()
+    @GetMapping ("/getbanks")
+    @ResponseStatus(HttpStatus.OK)
+    fun getBanks() : ResponseEntity<List<Bank>> {
+        val banks = service.getBanks()
 
-    @PostMapping
-    fun registerBanks(@RequestBody bank: Bank){
-        service.addNewBank(bank)
+        return ResponseEntity(banks, HttpStatus.OK)
+    }
+
+    @PostMapping("/banks")
+    fun createBanks(@RequestBody bank: Bank) : ResponseEntity<Bank>{
+        val createdBank =service.createBank(bank)
+        return ResponseEntity(createdBank, HttpStatus.CREATED)
+    }
+    @GetMapping("/{id}")
+    fun getUserById(@PathVariable id: Long): ResponseEntity<Bank?>{
+
+        val bank = service.getBankById(id)
+
+        return if (bank !=null){
+            ResponseEntity(bank, HttpStatus.OK)
+        }
+        else{
+            ResponseEntity(HttpStatus.NOT_FOUND)
+        }
+    }
+    @PutMapping("/{id}")
+    fun updateBank(@PathVariable id: Long, @RequestBody updatedBank: Bank): ResponseEntity<Bank?>{
+        val bank = service.updateBank(id, updatedBank)
+        return if (bank != null){
+            ResponseEntity(bank, HttpStatus.OK)
+        }
+        else{
+            ResponseEntity(HttpStatus.NOT_FOUND)
+        }
+    }
+
+
+    @DeleteMapping("/{id}")
+    fun deleteBank(@PathVariable id: Long): ResponseEntity<Void> {
+        service.deleteBank(id)
+        return ResponseEntity(HttpStatus.NO_CONTENT)
     }
 }

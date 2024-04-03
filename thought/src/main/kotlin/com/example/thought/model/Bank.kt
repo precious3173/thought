@@ -1,8 +1,13 @@
 package com.example.thought.model
 
 import jakarta.persistence.*
+import lombok.AllArgsConstructor
+import lombok.NoArgsConstructor
 
 @Entity
+@Table(name = "banks")
+@AllArgsConstructor
+@NoArgsConstructor
 data class Bank(
         @Id
         @SequenceGenerator(

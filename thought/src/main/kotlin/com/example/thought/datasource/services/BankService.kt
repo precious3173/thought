@@ -6,14 +6,10 @@ import org.springframework.stereotype.Service
 
 @Service
 class BankService(val bankDataSource: BankDataSource) {
-    fun getBanks(): Collection<Bank> {
+    fun getBanks(): List<Bank> {
         return bankDataSource.findAll()
     }
 
-    fun addNewBank(bank: Bank){
-
-
-    }
     fun createBank(bank: Bank): Bank{
         return bankDataSource.save(bank)
     }
