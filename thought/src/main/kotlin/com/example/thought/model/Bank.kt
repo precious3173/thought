@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor
 import lombok.NoArgsConstructor
 
 @Entity
-@Table(name = "banks")
+@Table()
 @AllArgsConstructor
 @NoArgsConstructor
 data class Bank(
@@ -20,7 +20,7 @@ data class Bank(
                 generator = "bank_sequence"
         )
         var id: Long = 0,
-        val accountNumber: String,
-        val name: String,
-        val transactionFee: Int
+        val accountNumber: String? = null,
+        val name: String? = null,
+        val transactionFee: Int? = null
         )
