@@ -28,4 +28,7 @@ class BankService(val bankDataSource: BankDataSource) {
     fun deleteBank(id: Long) {
         bankDataSource.deleteById(id)
     }
+    fun findByAccountNumber (accountNumber: String) :List<Bank>{
+        return bankDataSource.findByAccountNumber(accountNumber)!!
+    }
 }

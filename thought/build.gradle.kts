@@ -27,8 +27,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	//testImplementation("io.mockk:mockk:1.10.4")
-	//implementation ("org.springframework.boot:spring-boot-starter-data-jdbc")
-
+	implementation ("org.springframework.boot:spring-boot-starter-data-jdbc")
 	implementation("org.projectlombok:lombok:1.18.22")
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")

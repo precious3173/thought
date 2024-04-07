@@ -5,21 +5,16 @@ import lombok.AllArgsConstructor
 import lombok.NoArgsConstructor
 
 @Entity
-@Table()
+@Table(name="bank")
 @AllArgsConstructor
 @NoArgsConstructor
 data class Bank(
-        @Id
-        @SequenceGenerator(
-         name = "bank_sequence",
-         sequenceName = "bank_sequence",
-         allocationSize = 1
-        )
         @GeneratedValue(
-                strategy = GenerationType.SEQUENCE,
-                generator = "bank_sequence"
+                strategy = GenerationType.IDENTITY
         )
+        @Id
         var id: Long = 0,
+        @Column(unique = true)
         val accountNumber: String? = null,
         val name: String? = null,
         val transactionFee: Int? = null

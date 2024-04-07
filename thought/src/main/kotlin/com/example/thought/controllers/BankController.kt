@@ -23,13 +23,26 @@ class BankController(private val service: BankService) {
         val createdBank =service.createBank(bank)
         return ResponseEntity(createdBank, HttpStatus.CREATED)
     }
-    @GetMapping("/{id}")
+    @GetMapping("/search/{id}")
     fun getUserById(@PathVariable id: Long): ResponseEntity<Bank?>{
 
         val bank = service.getBankById(id)
 
         return if (bank !=null){
             ResponseEntity(bank, HttpStatus.OK)
+        }
+        else{
+            ResponseEntity(HttpStatus.NOT_FOUND)
+        }
+    }
+
+    @GetMapping("/getBanks/search/{account-number}")
+    fun findByAccountNumber (@PathVariable("account-number") accountNumber: String): ResponseEntity<List<Bank?>>{
+
+        val accountName = service.findByAccountNumber(accountNumber)
+
+        return if (accountName !=null){
+            ResponseEntity(accountName, HttpStatus.OK)
         }
         else{
             ResponseEntity(HttpStatus.NOT_FOUND)

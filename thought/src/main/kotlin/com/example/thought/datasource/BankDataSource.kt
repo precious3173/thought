@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface BankDataSource: JpaRepository<Bank, Long>{
-    @Query(value = "SELECT * FROM banks", nativeQuery = true)
-    fun getBank(): List<Bank>
+    fun findByAccountNumber (accountNumber: String): List<Bank>? = null
 }
