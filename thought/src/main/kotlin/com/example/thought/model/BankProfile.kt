@@ -6,8 +6,9 @@ import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 
 @Entity
-data class Pos(
-        @GeneratedValue(strategy =GenerationType.IDENTITY)
+data class BankProfile(
+
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Id
-     val id: Long
+        val id: Long = 0
 )
