@@ -1,5 +1,6 @@
 package com.example.thought.model
 
+import com.fasterxml.jackson.annotation.JsonBackReference
 import jakarta.persistence.*
 import lombok.AllArgsConstructor
 import lombok.NoArgsConstructor
@@ -21,7 +22,7 @@ data class Bank(
 
         @OneToOne(
                mappedBy = "bank",
-                cascade = arrayOf(CascadeType.ALL)
+                cascade = [CascadeType.ALL]
         )
         val bankProfile: BankProfile? = null,
 
@@ -29,6 +30,7 @@ data class Bank(
         @JoinColumn(
                 name = "bank_id"
         )
+        @JsonBackReference
         val institution: FinancialInstitution? = null
 
          )

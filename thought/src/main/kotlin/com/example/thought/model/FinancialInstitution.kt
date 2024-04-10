@@ -1,5 +1,6 @@
 package com.example.thought.model
 
+import com.fasterxml.jackson.annotation.JsonManagedReference
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
@@ -15,6 +16,7 @@ data class FinancialInstitution(
         @OneToMany(
                 mappedBy = "institution"
         )
-        val banks: List<Bank>? = null
+        @JsonManagedReference
+        val bank: List<Bank>? = null
 
 )
