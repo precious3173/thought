@@ -17,5 +17,18 @@ data class Bank(
         @Column(unique = true)
         val accountNumber: String? = null,
         val name: String? = null,
-        val transactionFee: Int? = null
+        val transactionFee: Int? = null,
+
+        @OneToOne(
+               mappedBy = "bank",
+                cascade = arrayOf(CascadeType.ALL)
         )
+        val bankProfile: BankProfile? = null,
+
+        @ManyToOne
+        @JoinColumn(
+                name = "bank_id"
+        )
+        val institution: FinancialInstitution? = null
+
+         )
