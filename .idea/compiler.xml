@@ -22,9 +22,11 @@
     <bytecodeTargetLevel>
       <module name="thought.thought.main" target="17" />
       <module name="thought.thought.main~1" target="17" />
+      <module name="thought.thought.main~2" target="17" />
       <module name="thought.thought.main~3" target="17" />
       <module name="thought.thought.test" target="17" />
       <module name="thought.thought.test~1" target="17" />
+      <module name="thought.thought.test~2" target="17" />
       <module name="thought.thought.test~3" target="17" />
     </bytecodeTargetLevel>
   </component>

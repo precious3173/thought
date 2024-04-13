@@ -1,8 +1,10 @@
 package com.example.thought.controllers
 
+import com.example.thought.DTO.BankDTO
 import com.example.thought.datasource.BankDataSource
 import com.example.thought.datasource.services.BankService
 import com.example.thought.model.Bank
+import com.example.thought.model.FinancialInstitution
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.*
 @RestController
 @RequestMapping("/api/banks")
 class BankController(private val service: BankService) {
+
+
     @GetMapping ("/getbanks")
     @ResponseStatus(HttpStatus.OK)
     fun getBanks() : ResponseEntity<List<Bank>> {
@@ -18,11 +22,22 @@ class BankController(private val service: BankService) {
         return ResponseEntity(banks, HttpStatus.OK)
     }
 
+//    @PostMapping("/banks")
+//    fun createBanks(@RequestBody bank: Bank) : ResponseEntity<Bank>{
+//        val createdBank =service.createBank(bank)
+//        return ResponseEntity(createdBank, HttpStatus.CREATED)
+//    }
+
     @PostMapping("/banks")
-    fun createBanks(@RequestBody bank: Bank) : ResponseEntity<Bank>{
-        val createdBank =service.createBank(bank)
-        return ResponseEntity(createdBank, HttpStatus.CREATED)
+    fun createBanks(@RequestBody bankDTO: BankDTO): ResponseEntity<Bank> {
+        // Here you can convert the DTO back to your domain model and save it
+        // For simplicity, let's assume there's a conversion method in the service
+        val bank = service.bankDTO(bankDTO)
+        val createdBank = service.createBank(bank)
+     return ResponseEntity(createdBank, HttpStatus.CREATED)
     }
+
+
     @GetMapping("/search/{id}")
     fun getUserById(@PathVariable id: Long): ResponseEntity<Bank?>{
 
